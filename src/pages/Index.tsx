@@ -33,24 +33,54 @@ const Index = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="Chicago Boxing Club gym interior" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/60" />
         </div>
         <div className="relative container-site py-20">
-          <div className="max-w-2xl">
-            <p className="text-secondary font-bold text-sm uppercase tracking-widest mb-4">Chicago's Fight Training Resource</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Train Like a <span className="text-secondary">Champion.</span>
-            </h1>
-            <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
-              Chicago Boxing Club is your expert information source for finding Chicago's serious training gyms for boxing, Muay Thai, Jiu-Jitsu, and other martial arts.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contactus" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base px-8 py-4 rounded-md transition-colors text-center">
-                Get Started Today
-              </Link>
-              <a href="tel:312-450-7850" className="border-2 border-white/30 hover:border-white/60 text-white font-bold text-base px-8 py-4 rounded-md transition-colors text-center flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5" /> Call 312-450-7850
-              </a>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text */}
+            <div>
+              <p className="text-secondary font-bold text-sm uppercase tracking-widest mb-4">Chicago's Fight Training Resource</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                Train Like a <span className="text-secondary">Champion.</span>
+              </h1>
+              <p className="text-lg text-white/70 leading-relaxed mb-8">
+                Chicago Boxing Club is your expert information source for finding Chicago's serious training gyms for boxing, Muay Thai, Jiu-Jitsu, and other martial arts.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contactus" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base px-8 py-4 rounded-md transition-colors text-center">
+                  Get Started Today
+                </Link>
+                <a href="tel:312-450-7850" className="border-2 border-white/30 hover:border-white/60 text-white font-bold text-base px-8 py-4 rounded-md transition-colors text-center flex items-center justify-center gap-2">
+                  <Phone className="w-5 h-5" /> Call 312-450-7850
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Contact Form */}
+            <div className="bg-black/50 backdrop-blur-sm border border-white/10 rounded-lg p-8">
+              <h3 className="text-xl font-extrabold text-white mb-2">Get Started Today</h3>
+              <p className="text-sm text-white/50 mb-6">Fill out the form and we'll get back to you shortly.</p>
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="text" placeholder="First Name" className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary" />
+                  <input type="text" placeholder="Last Name" className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary" />
+                </div>
+                <input type="email" placeholder="Email Address" className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary" />
+                <input type="tel" placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary" />
+                <select className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white/50 focus:outline-none focus:border-primary appearance-none">
+                  <option value="">Select Interest</option>
+                  <option value="boxing">Boxing Classes</option>
+                  <option value="muay-thai">Muay Thai</option>
+                  <option value="wrestling">Wrestling</option>
+                  <option value="jiujitsu">Jiu-Jitsu & MMA</option>
+                  <option value="youth">Youth Boxing</option>
+                  <option value="women">Boxing for Women</option>
+                  <option value="events">Fight Night Events</option>
+                </select>
+                <button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-4 rounded-md transition-colors">
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
