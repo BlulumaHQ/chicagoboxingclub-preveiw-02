@@ -98,7 +98,7 @@ const Footer = () => {
             <a href="https://swiftlift.app" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">
               SwiftLift
             </a>
-          </p>
+          {" "}<span className="block mt-1 opacity-80" data-concept-note>Design concept for portfolio purposes only. Not the official website of Chicago Boxing Club.</span></p>
         </div>
       </div>
     </footer>
